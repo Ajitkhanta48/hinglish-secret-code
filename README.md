@@ -14,7 +14,7 @@ A **web-based encryption and decryption tool** that allows users to encode and d
 ---
 
 ## **📌 Live Preview**
-🚀 **Try it out here:** [Hinglish Secret Code Web App](https://ajitkhanta48.github.io/hindi-secret-code/) 
+🚀 **Try it out here:** [Hinglish Secret Code Web App](https://ajitkhanta48.github.io/hinglish-secret-code/) 
 
 ---
 
@@ -37,7 +37,7 @@ A **web-based encryption and decryption tool** that allows users to encode and d
 ## **💻 Installation (For Developers)**
 Want to modify or improve this project? Follow these steps:
 
-git clone https://github.com/yourgithubusername/hinglish-secret-code.git
+git clone https://github.com/ajitkhanta48/hinglish-secret-code.git
 
 cd hinglish-secret-code
 
